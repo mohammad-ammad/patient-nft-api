@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const FormInfo = require("./../models/FormInfo");
 const { isAuthenticated } = require("./../middlewares/authMiddleware");
+const fs = require('fs')
 
 router.post("/create", isAuthenticated, async (req, res) => {
   try {
@@ -26,6 +27,22 @@ router.post("/get-all", isAuthenticated, async (req, res) => {
     res.status(200).json(_record);
   } catch (error) {
     res.status(500).json(error);
+  }
+});
+
+router.post("/file/:hash", async (req, res) => {
+  try {
+    const obj = req.body;
+    const hash = req.params.hash;
+    const data = JSON.stringify(obj)
+    fs.writeFile(`${hash}.json`, data, err => {
+      if (err) {
+        throw err
+      }
+      res.status(200).json({message:"Data save"});
+    })
+  } catch (error) {
+    console.log(error.message)
   }
 });
 
