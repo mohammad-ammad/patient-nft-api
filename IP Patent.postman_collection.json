@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "700fab6b-c1b6-42ca-ac3a-c25b90991bc1",
+		"name": "IP Patent",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18581530"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\": \"0x4c856A25a605835862f9153E6B1C3CEcb468a8e4\",\n    \"password\": \"Hash@12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\": \"0x4c856A25a605835862f9153E6B1C3CEcb468a8e4\",\n    \"password\": \"12345679\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet\": \"0x4c856A25a605835862f9153E6B1C3CEcb468a8e4\",\n    \"name\": \"Aun Shahbaz\",\n    \"email\": \"aun.shahbaz@gmail.com\",\n    \"country\": \"Pakistan\",\n    \"address\": \"S19 Gold Point, Rawalpindi\",\n    \"gender\": \"Male\",\n    \"phone\": \"03346599843\",\n    \"password\": \"Hash@12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Form Data",
+			"item": [
+				{
+					"name": "Add Form Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.MHg0Yzg1NkEyNWE2MDU4MzU4NjJmOTE1M0U2QjFDM0NFY2I0NjhhOGU0.A3O_aCX6_ym4g5ERxearzw-EtoVJEe5WzVfcI8NDbR0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"wallet\": \"0x0f1EFcbD8b6c64BfA8c2F2222d2F51e2076B187A\",\n        \"json_hash\": \"QmVxurL9BX5tQXm2YVBPpwAnU4bgNNyAYRRsJ8TQU3nmKy\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/form/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"form",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Form Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.MHg0Yzg1NkEyNWE2MDU4MzU4NjJmOTE1M0U2QjFDM0NFY2I0NjhhOGU0.A3O_aCX6_ym4g5ERxearzw-EtoVJEe5WzVfcI8NDbR0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/form/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"form",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
