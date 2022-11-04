@@ -92,4 +92,14 @@ router.get("/file/:wallet/:count", async (req, res) => {
   }
 });
 
+router.get("/count/:wallet", async (req, res) => {
+  try {
+    const wallet = req.params.wallet;
+    const counter = await Counter.findOne({wallet:wallet.toLowerCase()});
+    res.status(200).json(counter)
+  } catch (error) {
+    res.status(500).json(error.message)
+  }
+});
+
 module.exports = router;

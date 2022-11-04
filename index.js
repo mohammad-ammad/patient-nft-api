@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const authRouter = require("./routes/login");
 const formInfoRouter = require("./routes/formInfo");
+const collectionRoute = require('./routes/collectionRoute');
 
 dotenv.config();
 const app = express();
@@ -31,5 +32,6 @@ mongoose
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/form", formInfoRouter);
+app.use("/api/v1/collection",collectionRoute)
 
 app.listen("8000", () => console.log("Boom!"));
